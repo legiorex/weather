@@ -1,5 +1,5 @@
 // Paths
-import { source } from '../paths';
+import { source, statics } from '../paths';
 
 // Plugins
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
@@ -58,12 +58,12 @@ export const setupHtml = () => ({
         new HtmlWebpackPlugin({
             inject:   false,
             template: HtmlWebpackTemplate,
-            title:    'Интенсив по Redux: Facebook',
+            title:    'Интенсив по Redux',
+            favicon:  `${statics}/favicon/Lectrum-favicon-512x512.png`,
             meta:     [
                 {
                     name:    'viewport',
-                    content:
-                        'user-scalable=no, width=device-width, initial-scale=1',
+                    content: 'user-scalable=no, width=device-width, initial-scale=1',
                 }
             ],
             appMountIds: ['app', 'spinner'],

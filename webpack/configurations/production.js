@@ -5,6 +5,7 @@ import { generateCommonConfiguration } from './common';
 import {
     loadProductionCss,
     setupBuildAnalysis,
+    setupFavicon,
     cleanBuildDirectory
 } from '../modules';
 
@@ -18,6 +19,7 @@ export const generateProductionConfiguration = () =>
 
         // Loaders
         loadProductionCss(),
+        setupFavicon(),
 
         // Plugins
         cleanBuildDirectory(),
