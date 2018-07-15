@@ -1,0 +1,89 @@
+.like {
+    margin-top: 50px;
+    user-select: none;
+
+    & .icon {
+        position: relative;
+        margin-left: 6px;
+        padding-top: 2px;
+        padding-left: 20px;
+        color: var(--paletteColor9);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: default;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -1px;
+            left: -2px;
+            width: 18px;
+            height: 18px;
+            background-image: url('../../theme/assets/like.png');
+            background-repeat: no-repeat;
+            background-position: 0 -18px;
+            background-size: 18px;
+        }
+    }
+
+    & .liked::before {
+        background-position: 0 0;
+    }
+
+    & div {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        margin: 10px 0 0;
+        padding-left: 30px;
+        border: 1px solid var(--paletteColor10);
+        background-color: var(--paletteColor11);
+
+        & ul {
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 25px;
+            width: 200px;
+            padding: 6px 8px;
+            list-style: none;
+            border-radius: 2px;
+            background-color: var(--paletteColor8);
+            color: var(--paletteColor2);
+            font-size: 12px;
+            line-height: 16px;
+            text-align: left;
+        }
+
+        & span {
+            color: var(--paletteColor7);
+            font-size: 13px;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                width: 18px;
+                height: 19px;
+                background-image: url('../../theme/assets/like.png');
+                background-repeat: no-repeat;
+                background-position: 0 -37px;
+                background-size: 18px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.notification {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    max-width: 300px;
+    padding: 10px 17px;
+    transition: box-shadow 0.3s ease-out;
+    border-radius: 5px;
+    background-color: #e07b7c;
+    color: whitesmoke;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    word-break: break-all;
+    line-height: 1.4;
+    z-index: 1;
+    box-shadow: 0 25px 10px -15px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+        box-shadow: 0 15px 10px -15px rgba(0, 0, 0, 0.15);
+    }
+
+    & span {
+        display: block;
+        top: 10px;
+        font-size: 20px;
+        font-weight: 500;
+
+        &:last-child {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+}
+
+.info {
+    background-color: #67c58f;
+}

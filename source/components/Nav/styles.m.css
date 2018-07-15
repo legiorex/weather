@@ -1,0 +1,103 @@
+@import '../../theme/palette';
+
+.navigation {
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    border-bottom: var(--paletteColor12);
+    background-color: var(--paletteColor6);
+    padding: 0 5px;
+    z-index: 1;
+
+    & div {
+        display: flex;
+
+        & a:first-child {
+            margin-right: 5px;
+        }
+    }
+
+    & a,
+    & button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 27px;
+        padding: 2px 10px;
+        background-color: transparent;
+        color: var(--paletteColor2);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        border-radius: 7px;
+        border: 1px solid;
+        border-color: color-mod(var(--paletteColor6) lightness(65%));
+        transition: background-color 0.3s ease, border-color;
+        outline: 0;
+
+        &:hover {
+            background-color: var(--rgbaColor2);
+            border-color: color-mod(var(--paletteColor6) lightness(55%));
+        }
+
+        & img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border: 1px solid var(--rgbaColor1);
+            border-radius: 50%;
+        }
+    }
+
+    & .active {
+        background: var(--rgbaColor2);
+    }
+
+    & .hidden {
+        visibility: hidden;
+        flex-grow: 0;
+    }
+
+    & .status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        min-width: 80px;
+        height: 24px;
+        background: #e9ebee;
+        color: #365899;
+        border: 1px solid #365899;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        user-select: none;
+        cursor: pointer;
+        margin-right: 5px;
+
+        & span {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+    }
+
+    & .online {
+        & span {
+            background: #578843;
+            box-shadow: 0 0 2px #578843;
+        }
+    }
+
+    & .offline {
+        & span {
+            background: #f40009;
+            box-shadow: 0 0 2px #f40009;
+        }
+    }
+}

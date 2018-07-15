@@ -1,0 +1,14 @@
+{
+    "restartable": "rs",
+    "delay": "2500",
+    "ignore": ["./node_modules", ".git"],
+    "verbose": false,
+    "watch": ["./webpack", "package.json", ".babelrc"],
+    "env": {
+        "NODE_ENV": "development",
+        "BUILD_ENV": "development"
+    },
+    "exec":
+        "webpack-dev-server --config=./webpack/webpack.config.babel.js --env development",
+    "ext": "js json"
+}

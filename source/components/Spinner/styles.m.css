@@ -1,0 +1,22 @@
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--paletteColor6);
+    border-top: 4px solid var(--paletteColor3);
+    border-radius: 100%;
+    top: 60px;
+    right: 25px;
+    margin: auto;
+    animation: spinner 1s infinite linear;
+    z-index: 1;
+}

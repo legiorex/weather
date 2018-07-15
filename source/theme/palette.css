@@ -1,0 +1,42 @@
+:root {
+    /* HEX */
+    --paletteColor1: #000;
+    --paletteColor2: #fff;
+    --paletteColor3: #e9ebee;
+    --paletteColor4: #808080;
+    --paletteColor5: #90949c;
+    --paletteColor6: #4267b2;
+    --paletteColor7: #365899;
+    --paletteColor8: #282828;
+    --paletteColor9: #616770;
+    --paletteColor10: #e1e2e3;
+    --paletteColor11: #f6f7f9;
+    --paletteColor12: #29487d;
+    --paletteColor13: #1d2a5b;
+    --paletteColor14: #dddfe2;
+    --paletteColor15: #1d2129;
+    --paletteColor16: #79bc64;
+    --paletteColor17: #578843;
+    --paletteColor18: #3b6e22;
+    --paletteColor19: #2c5115;
+    --paletteColor20: #a4e388;
+    --paletteColor21: #67ae55;
+    --paletteColor22: #69a74e;
+    --paletteColor23: #323544;
+    --paletteColor24: #6b84fc;
+    --paletteColor25: #f40009;
+    --paletteColor26: #ffdbb2;
+    --paletteColor27: #ffd6a8;
+    --paletteColor28: #794932;
+    --paletteColor29: #4f200a;
+    --paletteColor30: #ed5754;
+    --paletteColor31: #d4c5a0;
+
+    /* RGBA */
+    --rgbaColor1: rgba(0, 0, 0, 0.1);
+    --rgbaColor2: rgba(0, 0, 0, 0.2);
+
+    /* Gradients */
+    --gradient1: linear-gradient(var(--paletteColor21), var(--paletteColor17));
+    --gradient2: linear-gradient(var(--paletteColor16), var(--paletteColor17));
+}

@@ -1,0 +1,4 @@
+:root {
+    --cubic1: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    --cubic2: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
