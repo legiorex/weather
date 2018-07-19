@@ -1,5 +1,6 @@
 // Core
 import getRepositoryName from 'git-repo-name';
+import chalk from 'chalk';
 
 // Paths
 import { source, build } from '../paths';
@@ -21,7 +22,21 @@ import merge from 'webpack-merge';
 export const generateCommonConfiguration = () => {
     const BUILD_ENV = process.env.BUILD_ENV;
     const IS_DEPLOYING_TO_GITHUB_PAGES = process.env.DEPLOY_TARGET === 'github-pages';
-    const REPOSITORY_NAME = getRepositoryName.sync();
+    let REPOSITORY_NAME = '';
+
+    try {
+        REPOSITORY_NAME = getRepositoryName.sync();
+    } catch (error) {
+        console.log(
+            chalk.whiteBright.bgRed.bold(`
+Твой локальный репозиторий не привязан к удалённому репозиторию, или локальный репозиторий отсутствует.
+Для успешного деплоя на Github Pages:
+    1. Если локального репозитория для этого проект нет — создай его;
+    2. Создай удалённый репозиторий на Github;
+    3. Привяжи локальный репозиторий этого проекта к удалённому репозиторию на Github.
+`)
+        );
+    }
 
     return merge(
         // Loaders
