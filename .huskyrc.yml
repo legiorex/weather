@@ -1,3 +1,0 @@
----
-hooks:
-    pre-push: npm run soundcheck
