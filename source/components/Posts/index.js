@@ -27,9 +27,6 @@ export default class Posts extends Component {
             createPostAsync: () => {},
             likePostAsync:   () => {},
             unlikePostAsync: () => {},
-
-            // Redux form
-            reset: () => {},
         },
     };
 
@@ -37,7 +34,6 @@ export default class Posts extends Component {
         const { actions } = this.props;
 
         actions.fetchPostsAsync();
-        actions.fetchUsersAsync();
     }
 
     render () {

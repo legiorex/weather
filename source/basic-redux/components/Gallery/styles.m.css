@@ -35,25 +35,19 @@
             font-weight: 700;
             background-color: wheat;
             color: var(--paletteColor15);
-            transition: border 0.2s ease-in, background-color 0.2s ease-in, color 0.2s ease-in;
+            transition: border 0.1s ease-in, background-color 0.1s ease-in, color 0.1s ease-in;
             border: 1px solid black;
 
             &:hover {
-                color: color-mod(var(--paletteColor15) s(150%));
-                background-color: color-mod(wheat s(150%));
-                border: 1px solid black;
-            }
-
-            &:active {
-                color: color-mod(var(--paletteColor15) s(30%));
-                background-color: color-mod(wheat s(30%));
-                border: 1px solid black;
+                color: wheat;
+                background-color: var(--paletteColor15);
+                border: 1px solid currentColor;
             }
         }
 
         & .buttonActive {
             color: wheat;
-            background-color: var(--paletteColor15);
+            background-color: color-mod(var(--paletteColor15) tint(10%));
             border: 1px solid currentColor;
         }
     }

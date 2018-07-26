@@ -1,4 +1,4 @@
-//Coret
+// Core
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import cx from 'classnames';
@@ -56,9 +56,9 @@ export default class Nav extends Component {
     };
 
     render () {
-        const navigation = this._getNav();
-
         const { isOnline } = this.props;
+
+        const navigation = this._getNav();
         const statusStyle = cx(Styles.status, {
             [Styles.online]:  isOnline,
             [Styles.offline]: !isOnline,
