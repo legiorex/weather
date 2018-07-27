@@ -83,7 +83,7 @@ export default class Profile extends Component {
                             } }
                         />
                         <button className = { buttonStyle } disabled = { isFetching } type = 'submit'>
-                            {isFetching ? 'Загрузка...' : 'Обновить профиль'}
+                            {buttonMessage}
                         </button>
                     </div>
                     <Link to = { book.newPassword }>сменить пароль →</Link>
