@@ -19,7 +19,7 @@
         "test:debug": "node --inspect-brk \"./node_modules/.bin/jest\" --runInBand --config=\"./jest/jest.test.config.json\"",
         "soundcheck": "jest --config=\"./jest/jest.config.json\"",
         "prettier": "prettier-eslint --list-different \"./source/**/*.js\"; prettier-eslint --write \"./source/**/*.js\"",
-        "deploy": "run-s soundcheck build:prod-github-pages gh-pages",
+        "deploy": "run-s build:prod-github-pages gh-pages",
         "gh-pages": "gh-pages -d build"
     },
     "dependencies": {
