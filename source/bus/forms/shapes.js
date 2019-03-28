@@ -1,14 +1,15 @@
 // Core
 import { object, string, boolean } from 'yup';
 
+const phoneRegExp = /^ ((8 |\+7)[\- ] ?)?(\(?\d{ 3 } \)?[\- ] ?)?[\d\- ]{ 7, 10 } $/;
+
 export const login = {
     shape: {
-        email:    '',
-        password: '',
-        remember: false,
+        login:    'test@test.ru',
+        password: '123123q',
     },
     schema: object().shape({
-        email: string()
+        login: string()
             .email()
             .required(),
         password: string()
@@ -20,11 +21,8 @@ export const login = {
 
 export const signup = {
     shape: {
-        firstName: '',
-        lastName:  '',
-        email:     '',
-        password:  '',
-        invite:    '',
+        login:    '',
+        password: '',
     },
     schema: object().shape({
         firstName: string().required(),

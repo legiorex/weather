@@ -1,81 +1,130 @@
 // Core
-import React, { Component } from 'react';
-import { Formik, Form, Field } from 'formik';
+import React, { Component, createRef } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Form } from "react-redux-form";
 import cx from 'classnames';
 
 // Instruments
 import Styles from './styles.m.css';
-import { login } from '../../bus/forms/shapes';
+
+// Actions
+import { authActions } from "../../bus/auth/actions";
+
+// Components
+import { Input } from '../../components';
+
+const mapStateToProps = (state) => {
+
+    return { profile: state.forms.user.profile };
+};
+
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        actions: bindActionCreators(
+            { ...authActions },
+            dispatch
+        ),
+    };
+
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
 
 export default class LoginForm extends Component {
     static defaultProps = {
         // State
         isFetching: false,
 
-        // Actions
-        loginAsync: () => {},
     };
 
-    _submitLoginForm = (credentials) => {
-        this.props.loginAsync(credentials);
+    taskInput = createRef();
+
+    _submitLoginForm = (userData) => {
+
+        this.props.actions.loginAsync(userData);
     };
+
+    _resetPassword = () => {
+        const { profile, actions } = this.props;
+
+        actions.resetPasswordAsync({ login: profile.login });
+    }
 
     render () {
         const { isFetching } = this.props;
+        const centeredWrapperStyle = cx(Styles.wrapper, Styles.centered, {
+            [Styles.disabledInput]: isFetching,
+        });
+        const buttonStyle = cx(Styles.disabledButton, {
+            [Styles.loginSubmit]: true,
+        });
 
         return (
-            <Formik
-                initialValues = { login.shape }
-                render = { (props) => {
-                    const { isValid, touched, errors } = props;
-
-                    const centeredWrapperStyle = cx(Styles.wrapper, Styles.centered, {
-                        [Styles.disabledInput]: isFetching,
-                    });
-                    const emailStyle = cx({
-                        [Styles.invalidInput]: !isValid && touched.email && errors.email,
-                    });
-                    const passwordStyle = cx({
-                        [Styles.invalidInput]: !isValid && touched.password && errors.password,
-                    });
-                    const buttonStyle = cx(Styles.loginSubmit, {
-                        [Styles.disabledButton]: isFetching,
-                    });
-                    const buttonMessage = isFetching ? 'Загрузка...' : 'Войти';
-
-                    return (
-                        <Form className = { Styles.form }>
-                            <div className = { centeredWrapperStyle }>
-                                <div>
-                                    <Field
-                                        className = { emailStyle }
-                                        disabled = { isFetching }
-                                        name = 'email'
-                                        placeholder = 'Почта'
-                                        type = 'email'
-                                    />
-                                    <Field
-                                        className = { passwordStyle }
-                                        disabled = { isFetching }
-                                        name = 'password'
-                                        placeholder = 'Пароль'
-                                        type = 'password'
-                                    />
-                                    <label className = { Styles.rememberMe }>
-                                        <Field checked = { props.values.remember } name = 'remember' type = 'checkbox' />
-                                        Запомнить меня
-                                    </label>
-                                    <button className = { buttonStyle } disabled = { isFetching } type = 'submit'>
-                                        {buttonMessage}
-                                    </button>
-                                </div>
-                            </div>
-                        </Form>
-                    );
-                } }
-                validationSchema = { login.schema }
+            <Form
+                className = { Styles.form }
                 onSubmit = { this._submitLoginForm }
-            />
+
+                model = 'forms.user.profile'>
+
+                <div className = { centeredWrapperStyle }>
+                    <div >
+                        <div className = { Styles.headerForm }>
+                            <h2>Вход</h2>
+                            <a href = ''>Регистрация</a>
+                        </div>
+
+                        <div>
+                            <div className = { Styles.inputWrapper } >
+                                <span className = { Styles.inputLabel }>Эл. почта или телефон</span>
+                                <Input
+                                    disabled = { isFetching }
+                                    disabledStyle = { Styles.disabledInputRedux }
+                                    id = 'forms.user.profile.login'
+                                    invalidStyle = { Styles.invalidInput }
+                                    label = 'Email'
+                                    model = 'forms.user.profile.login'
+                                    placeholder = 'Эл. почта или телефон'
+
+                                />
+                            </div>
+
+                            <div className = { Styles.inputWrapper } >
+                                <span className = { Styles.inputLabel }>Пароль</span>
+                                <div className = { Styles.inputPasswordWrapper } >
+                                    <div className = { Styles.inputPassword } >
+                                        <Input
+                                            disabled = { isFetching }
+                                            disabledStyle = { Styles.disabledInputRedux }
+                                            id = 'forms.user.profile.password'
+                                            invalidStyle = { Styles.invalidInput }
+                                            model = 'forms.user.profile.password'
+                                            placeholder = 'Пароль'
+                                        />
+                                    </div>
+
+                                    <a
+                                        className = { Styles.resetPassword }
+                                        onClick = { this._resetPassword }>
+                                                Напомнить
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                className = { buttonStyle }
+                                disabled = { isFetching }
+                                type = 'submit'>
+                                        Войти на площадку
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </Form>
         );
     }
 }

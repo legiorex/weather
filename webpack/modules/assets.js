@@ -1,8 +1,8 @@
 // Paths
-import { source, statics } from '../paths';
+import { source } from '../paths';
 
 // Plugins
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+// import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackTemplate from 'html-webpack-template';
 
@@ -42,16 +42,16 @@ export const loadImages = () => ({
     },
 });
 
-export const setupFavicon = () => ({
-    plugins: [
-        new FaviconsWebpackPlugin({
-            logo:            './static/favicon/favicon.svg',
-            prefix:          'images/favicon/icon-[hash]',
-            statsFilename:   'iconstats-[hash].json',
-            persistentCache: true,
-        })
-    ],
-});
+// export const setupFavicon = () => ({
+//     plugins: [
+//         new FaviconsWebpackPlugin({
+//             logo:            './static/favicon/favicon.svg',
+//             prefix:          'images/favicon/icon-[hash]',
+//             statsFilename:   'iconstats-[hash].json',
+//             persistentCache: true,
+//         })
+//     ],
+// });
 
 export const setupHtml = () => ({
     plugins: [
@@ -59,7 +59,7 @@ export const setupHtml = () => ({
             inject:   false,
             template: HtmlWebpackTemplate,
             title:    'Интенсив по Redux',
-            favicon:  `${statics}/favicon/Lectrum-favicon-512x512.png`,
+            // favicon:  `${statics}/favicon/Lectrum-favicon-512x512.png`,
             meta:     [
                 {
                     name:    'viewport',

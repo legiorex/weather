@@ -4,48 +4,80 @@
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 42px);
-    background-color: var(--paletteColor3);
+    background-color: var(--paletteColor2);
     padding: 42p;
+    
 
     & .wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
-        height: 550px;
-        padding-bottom: 25px;
+        max-width: 342px;
+        width: 100%;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0 5px 25px hsla(0,0%,84.3%,.5);
+        border-radius: 3px;
+        padding: 10px 12px;
 
+        & .headerForm {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 15px;
+        }
         & div {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: space-between;
+            width: 100%;
 
             & h1 {
                 font-size: 45px;
                 font-weight: 700;
             }
 
-            & img {
-                height: 180px;
-                width: 180px;
-                margin: 20px 0;
-                border: 4px solid var(--paletteColor2);
-                border-radius: 50%;
-                background-color: var(--paletteColor2);
-                cursor: pointer;
+            & h2 {
+                font-family: Tahoma,Roboto,Helvetica,sans-serif;
+                font-weight: 700;
+                line-height: 1.25em;
             }
+            
+            & .inputWrapper {
+                display: flex;
+                flex-direction: column;
+                
+                & .inputLabel {
+                    width: 100%;
+                    font-size: 14px;
+                    color: var(--paletteColor1);
+                    padding-bottom: 5px;
+                }
 
+                & .inputPasswordWrapper {
+                    position:relative;
+                }
+                & .inputPassword {
+                    position:absolute;
+                    width: 100%;
+                    display:block
+                }
+
+                & .resetPassword {
+                    position:absolute;
+                    top:10px;
+                    right:10px;
+                }
+            }
+            
             & input {
-                width: 230px;
-                height: 40px;
+                width: 100%;
+                height: 34px;
                 margin: 0 0 20px;
                 padding: 8px 10px;
-                border: 1px solid var(--paletteColor14);
-                border-radius: 7px;
+                border: 1px solid var(--paletteColor14);                
                 outline: none;
                 color: var(--paletteColor15);
-                font-size: 17px;
+                font-size: 14px;
                 transition: border 0.3s ease, box-shadow 0.3s ease;
 
                 &[type='checkbox'] {
@@ -74,32 +106,22 @@
                 }
             }
 
-            & .rememberMe {
-                display: flex;
-                align-items: center;
-                margin: 0 0 20px;
-                color: var(--paletteColor8);
-                cursor: pointer;
-                user-select: none;
-                font-size: 14px;
-            }
-
             & button {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 230px;
-                padding: 0 16px;
+                width: 186px;
                 margin-bottom: 20px;
                 outline: 0;
-                border-radius: 7px;
+                border-radius: 3px;
                 border: none;
                 color: var(--paletteColor2);
-                height: 34px;
                 cursor: pointer;
-                font-size: 18px;
-                font-weight: 600;
+                font-size: 16px;
                 transition: background-color 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.3s ease;
+                padding: 10px 0px;
+                position: relative;
+                margin-top: 50px;
             }
 
             & .loginSubmit,
@@ -193,30 +215,18 @@
     }
 
     & .disabledButton {
-        background-color: var(--paletteColor7);
+        background-color: var(--paletteColor8);
     }
 
     & a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 230px;
-        padding: 0 16px;
-        border-radius: 7px;
-        outline: 0;
-        color: var(--paletteColor2);
-        height: 34px;
+        color: var(--paletteColor13);        
         cursor: pointer;
-        font-size: 18px;
-        font-weight: 500;
-        transition: background-color 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.3s ease;
-        background-color: var(--paletteColor6);
+        font-size: 14px;
+        font-weight: 700;        
         text-decoration: none;
 
         &:hover {
-            border-color: var(--paletteColor7);
-            background-color: var(--paletteColor7);
-            box-shadow: 0 3px 3px -1px var(--paletteColor5);
+            color: var(--paletteColor7);
         }
     }
 }
