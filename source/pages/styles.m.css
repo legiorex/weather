@@ -1,0 +1,9 @@
+.wrapper {
+    height: 100%
+}
+.mainContainer {
+    max-width: 650px !important;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 300px;
+}

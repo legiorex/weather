@@ -2,10 +2,8 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import { authReducer as auth } from "../bus/auth/reducer";
-import { formsReducer as forms } from "../bus/forms/reducer";
+import { weatherReducer as weather } from '../bus/weather/reducer';
 
 export const rootReducer = combineReducers({
-    auth,
-    forms,
+    weather,
 });

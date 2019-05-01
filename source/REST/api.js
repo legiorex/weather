@@ -1,24 +1,10 @@
-const url = `http://mrkt.little.team/api/public/`;
+const url = 'http://api.openweathermap.org/data/2.5/group?id=';
+const key = '3afdf68646c70c4a2617d387992d73d8';
 
 export const api = {
-
-    login (userInfo) {
-        return fetch(`${url}users/login`, {
-            method:  "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userInfo),
+    fetchWeather (idCities) {
+        return fetch(`${url}${idCities}&lang=ru&units=metric&appid=${key}`, {
+            method: 'POST',
         });
     },
-    resetPassword (login) {
-        return fetch(`${url}users/reset-password`, {
-            method:  "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(login),
-        });
-    },
-
 };

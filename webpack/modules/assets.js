@@ -11,7 +11,7 @@ export const loadFonts = () => ({
         rules: [
             {
                 test:    /\.eot|ttf|woff2?(\?v=\d+\.\d+\.\d+)?$/,
-                include: source,
+                // include: source,
                 use:     {
                     loader:  'file-loader',
                     options: {
@@ -28,7 +28,7 @@ export const loadImages = () => ({
         rules: [
             {
                 test:    /\.jpe?g|png|svg$/,
-                include: source,
+                // include: source,
                 use:     {
                     loader:  'url-loader',
                     options: {
@@ -58,7 +58,7 @@ export const setupHtml = () => ({
         new HtmlWebpackPlugin({
             inject:   false,
             template: HtmlWebpackTemplate,
-            title:    'Интенсив по Redux',
+            title:    'Weather',
             // favicon:  `${statics}/favicon/Lectrum-favicon-512x512.png`,
             meta:     [
                 {
@@ -66,7 +66,7 @@ export const setupHtml = () => ({
                     content: 'user-scalable=no, width=device-width, initial-scale=1',
                 }
             ],
-            appMountIds: ['app', 'spinner'],
+            appMountIds: ['app'],
         })
     ],
 });

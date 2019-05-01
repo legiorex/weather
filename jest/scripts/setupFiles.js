@@ -2,28 +2,42 @@
 import { LocalStorage } from './mocks/localStorage';
 import { fetch } from './mocks/fetch';
 
-const successMesasge = 'TEST_SUCCESS_MESSAGE.';
 const errorMessage = 'TEST_ERROR_MESSAGE.';
-const token = 'TEST_TOKEN';
-const error = new Error(errorMessage);
 
-const userProfile = {
-    id:        'TEST_ID',
-    avatar:    'TEST_AVATAR',
-    firstName: 'Walter',
-    lastName:  'White',
-    token,
-};
-
-const credentials = {
-    email:    'test@email.com',
-    password: '1111',
-    remember: true,
-};
+const idCities = '2013348,491422,468902';
+const id = 2013348;
+const weatherMock = [
+    {
+        clouds: { all: 40 },
+        coord:  { lon: 131.87, lat: 43.11 },
+        dt:     1556695234,
+        id:     2013348,
+        main:   { temp: 10, pressure: 1000, humidity: 76, temp_min: 10, temp_max: 10 },
+        name:   'Vladivostok',
+        sys:    {
+            type:    1,
+            id:      8885,
+            message: 0.005,
+            country: 'RU',
+            sunrise: 1556654827,
+            sunset:  1556705525,
+            type:    1 },
+        visibility: 10000,
+        weather:    [
+            {
+                id:          802,
+                main:        'Clouds',
+                description: 'слегка облачно',
+                icon:        '03d',
+            }
+        ],
+        wind: { speed: 1 },
+    }
+];
 
 const responseDataSuccess = {
-    data:    userProfile,
-    message: successMesasge,
+    list: weatherMock,
+    cnt:  1,
 };
 
 const responseDataFail = {
@@ -35,30 +49,19 @@ const fetchResponseSuccess = {
     json:   jest.fn(() => Promise.resolve(responseDataSuccess)),
 };
 
-const fetchResponseFail401 = {
-    status: 401,
-    json:   jest.fn(() => Promise.resolve(responseDataFail)),
-};
-
 const fetchResponseFail400 = {
     status: 400,
     json:   jest.fn(() => Promise.resolve(responseDataFail)),
 };
 
-const url = 'https://www.url.com';
-
 global.__ = {
-    userProfile,
-    errorMessage,
-    token,
-    error,
     responseDataSuccess,
     responseDataFail,
     fetchResponseSuccess,
-    fetchResponseFail401,
     fetchResponseFail400,
-    credentials,
-    url,
+    weatherMock,
+    idCities,
+    id,
 };
 global.fetch = fetch;
 global.localStorage = new LocalStorage();

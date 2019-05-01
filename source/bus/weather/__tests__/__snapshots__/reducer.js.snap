@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`weather reducer: should handle FILL_WEATHER action 1`] = `
+Object {
+  "cities": Array [
+    Object {
+      "id": 2013348,
+      "link": "vladivostok",
+      "name": "Владивосток",
+    },
+    Object {
+      "id": 491422,
+      "link": "sochi",
+      "name": "Сочи",
+    },
+    Object {
+      "id": 468902,
+      "link": "yaroslavl",
+      "name": "Ярославль",
+    },
+  ],
+  "weatherData": Array [
+    Object {
+      "clouds": Object {
+        "all": 40,
+      },
+      "coord": Object {
+        "lat": 43.11,
+        "lon": 131.87,
+      },
+      "dt": 1556695234,
+      "id": 2013348,
+      "main": Object {
+        "humidity": 76,
+        "pressure": 1000,
+        "temp": 10,
+        "temp_max": 10,
+        "temp_min": 10,
+      },
+      "name": "Vladivostok",
+      "sys": Object {
+        "country": "RU",
+        "id": 8885,
+        "message": 0.005,
+        "sunrise": 1556654827,
+        "sunset": 1556705525,
+        "type": 1,
+      },
+      "visibility": 10000,
+      "weather": Array [
+        Object {
+          "description": "слегка облачно",
+          "icon": "03d",
+          "id": 802,
+          "main": "Clouds",
+        },
+      ],
+      "wind": Object {
+        "speed": 1,
+      },
+    },
+  ],
+}
+`;

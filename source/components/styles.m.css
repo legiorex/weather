@@ -1,0 +1,26 @@
+.contentColumn {
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+.description {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 240px;
+}
+.itemWrapper{
+    width: 100%;
+
+    & .menuItem {
+        justify-content: center;
+    }
+}
+.mainMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.timeBox {
+    margin-bottom: 30px;
+}

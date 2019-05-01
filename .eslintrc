@@ -153,6 +153,7 @@ rules:
   id-blacklist: 1
   indent: [1, 4, {"SwitchCase": 1}]
   jsx-quotes: [1, "prefer-single"]
+  quotes: ["error", "single"]
   keyword-spacing: 1
   linebreak-style: 0
   lines-around-comment: 1

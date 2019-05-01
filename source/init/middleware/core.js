@@ -1,17 +1,17 @@
 // Core
-import { applyMiddleware, compose } from "redux";
+import { applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 // Middleware
-import { createLogger } from "redux-logger";
+import { createLogger } from 'redux-logger';
 
 const logger = createLogger({
     duration: true,
     colors:   {
-        title:     () => "#139BFE",
-        prevState: () => "#1C5FAF",
-        action:    () => "#149945",
-        nextState: () => "#A47104",
+        title:     () => '#139BFE',
+        prevState: () => '#1C5FAF',
+        action:    () => '#149945',
+        nextState: () => '#A47104',
         error:     () => '#ff0005',
     },
 });

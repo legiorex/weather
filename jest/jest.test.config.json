@@ -10,9 +10,8 @@
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-        "<rootDir>/source/bus/auth/**/*.{js,jsx}",
-        "<rootDir>/source/bus/ui/**/*.{js,jsx}",
-        "<rootDir>/source/bus/profile/**/*.{js,jsx}",
+        "<rootDir>/source/instruments/**/*.{js,jsx}",
+        "<rootDir>/source/bus/weather/**/*.{js,jsx}",
         "<rootDir>/source/init/store.js"
     ],
     "modulePaths": [ "<rootDir>/source", "<rootDir>/node_modules" ],
